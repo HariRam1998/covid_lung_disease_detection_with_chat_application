@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+body{
+      background-image: url("https://alumni.umich.edu/wp-content/uploads/How-Does-COVID19-Appear-in-the-Lungs.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+  background-size: 100% 100%;
+  }
+#main {
+  margin: 30px 8px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+@media (max-width: 460px) {
+  #main {
+    margin: 0;
+  }
+}
+
+img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+
+}
+
+#img-div {
+  background: white;
+  padding: 10px;
+  margin: 0;
+}
+
+#img-caption {
+  margin: 15px 0 5px 0;
+}
+
+@media (max-width: 460px) {
+  #img-caption {
+    font-size: 1.4rem;
+  }
+}
+
+#headline {
+  margin: 50px 0;
+  text-align: center;
+}
+
+
+blockquote {
+  font-style: italic;
+  max-width: 545px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+}
+.smaller-image {
+  width: 500px;
+}
+    </style>
+    <main id="main">
+  <h1 id="title" class="text-center"><p><span>Predicted Output:  </span> {{predict}}</p></h1>
+  <figure id="img-div">
+          <img id="image"
+               <a href="#"><img class="smaller-image" src="{{url}}"></a>
+
+
+    <figcaption id="img-caption">
+      {% if predict == 'COVID19' %}
+
+<div class="text-center">
+  	<a href="{% url 'user_login' %}" style="  background-color: #f44336;color: white;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;">Talk With Doctor</a>
+</div>
+{% endif %}
+    </figcaption>
+  </figure>
+
+</main>
+
+{% endblock %}
